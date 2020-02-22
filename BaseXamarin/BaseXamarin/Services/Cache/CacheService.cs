@@ -5,9 +5,16 @@ namespace BaseXamarin.Services
     using System;
     using System.Reactive.Linq;
     using System.Threading.Tasks;
+    using Xamarin.Essentials;
 
     public class CacheService : ICacheService
     {
+        public void Start()
+        {
+            Akavache.Registrations.Start(AppInfo.Name);
+        }
+
+
         public async Task<T> GetLocal<T>(string key)
         {
             return await BlobCache.LocalMachine.GetObject<T>(key);

@@ -5,7 +5,8 @@
 
 	public interface ILogService
     {
-		void Log(LogItem logItem);
+		void Start();
+		void Log(string message);
 		void Log(string message, [CallerMemberName]string callerMemberName = null);
 		void LogError(Exception ex);
 		void LogError(Exception ex, [CallerMemberName]string callerMemberName = null);

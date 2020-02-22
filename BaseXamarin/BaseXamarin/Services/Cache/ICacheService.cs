@@ -5,6 +5,8 @@
 
     public interface ICacheService
     {
+        void Start();
+
         Task<T> GetLocal<T>(string key);
         Task SetLocal<T>(string key, T value);
         Task SetLocal<T>(string key, T value, TimeSpan expiration);
