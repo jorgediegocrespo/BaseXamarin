@@ -1,15 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             xmlns:translate="clr-namespace:BaseXamarin.Extensions;assembly=BaseXamarin"
              x:Class="BaseXamarin.MainPage">
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Entry Placeholder="Value" x:Name="EnValue" />
-        <Button Text="Save" Clicked="Button_Clicked"/>
-        <Button Text="Read" Clicked="Button_Clicked_1"/>
+        <Button Text="Read" Clicked="Button_Clicked"/>
         <Label x:Name="LbValue" />
     </StackLayout>
 

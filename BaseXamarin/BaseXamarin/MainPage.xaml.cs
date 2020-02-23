@@ -1,4 +1,5 @@
-﻿using BaseXamarin.Services;
+﻿using BaseXamarin.Resources;
+using BaseXamarin.Services;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -10,21 +11,13 @@ namespace BaseXamarin
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        private readonly ICacheService cacheService;
         public MainPage()
         {
             InitializeComponent();
-            cacheService = DependencyService.Get<ICacheService>();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            await cacheService.SetLocal<string>("Test", EnValue.Text);
-        }
-
-        private async void Button_Clicked_1(object sender, EventArgs e)
-        {
-            LbValue.Text = await cacheService.GetLocal<string>("Test");
         }
     }
 }

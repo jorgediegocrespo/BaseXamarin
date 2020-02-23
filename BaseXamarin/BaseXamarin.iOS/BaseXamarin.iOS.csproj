@@ -66,6 +66,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\PageRenderer\PageRenderer.cs" />
     <Compile Include="Services\KeyboardService\KeyboardService.cs" />
+    <Compile Include="Services\LocalizeService\LocalizeService.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />

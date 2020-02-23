@@ -70,6 +70,7 @@
     <Compile Include="Services\KeyboardService\KeyboardListner.cs" />
     <Compile Include="Services\KeyboardService\KeyboardService.cs" />
     <Compile Include="Services\KeyboardService\KeyboardServiceExtensions.cs" />
+    <Compile Include="Services\LocalizeService\LocalizeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
