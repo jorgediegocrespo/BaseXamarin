@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:base="clr-namespace:BaseXamarin.Base"
+                      xmlns:features="clr-namespace:BaseXamarin.Features"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      x:Class="BaseXamarin.Features.OnboardingView"
+                      x:TypeArguments="features:OnboardingViewModel">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Button x:Name="BtnTest" Text="Read" TextColor="Red" Clicked="Button_Clicked"/>
+        <Label x:Name="LbValue" />
+    </StackLayout>
+</base:BaseContentPage>

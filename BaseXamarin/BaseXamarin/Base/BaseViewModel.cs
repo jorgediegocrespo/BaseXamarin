@@ -4,6 +4,7 @@
     using ReactiveUI;
     using System.Reactive.Disposables;
     using System.Threading.Tasks;
+    using Xamarin.Forms;
 
     public abstract class BaseViewModel : ReactiveObject
     {
@@ -15,6 +16,10 @@
 
         public BaseViewModel()
         {
+            logService = DependencyService.Get<ILogService>();
+            navigationService = DependencyService.Get<INavigationService>();
+            alertDialogService = DependencyService.Get<IAlertDialogService>();
+
             CreateCommands();
         }
 

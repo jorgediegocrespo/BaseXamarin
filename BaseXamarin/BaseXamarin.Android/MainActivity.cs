@@ -4,6 +4,7 @@
     using Android.Content.PM;
     using Android.OS;
     using Android.Runtime;
+    using BaseXamarin.Common;
     using System;
     using System.IO;
     using System.Threading.Tasks;
@@ -26,6 +27,8 @@
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            SetDeviceDisplayInfo();
+
             LoadApplication(new App());
         }
 
@@ -33,6 +36,12 @@
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        private void SetDeviceDisplayInfo()
+        {
+            DeviceDisplayInfo.ScreenHeight = (int)(Resources.DisplayMetrics.HeightPixels / Resources.DisplayMetrics.Density);
+            DeviceDisplayInfo.ScreenWidth = (int)(Resources.DisplayMetrics.WidthPixels / Resources.DisplayMetrics.Density);
         }
 
         private static void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs unobservedTaskExceptionEventArgs)
@@ -62,7 +71,7 @@
             }
             catch
             {
-                // just suppress any error logging exceptions
+                //Suppress any error logging exceptions
             }
         }
     }

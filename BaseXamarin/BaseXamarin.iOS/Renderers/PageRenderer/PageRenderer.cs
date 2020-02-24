@@ -30,7 +30,7 @@ namespace BaseXamarin.iOS.Renderers
         public override void TraitCollectionDidChange(UITraitCollection previousTraitCollection)
         {
             base.TraitCollectionDidChange(previousTraitCollection);
-            if (TraitCollection.UserInterfaceStyle != previousTraitCollection.UserInterfaceStyle)
+            if (TraitCollection.UserInterfaceStyle != previousTraitCollection?.UserInterfaceStyle)
                 SetTheme();
         }
 

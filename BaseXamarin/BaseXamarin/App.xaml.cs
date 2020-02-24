@@ -1,5 +1,6 @@
 ﻿namespace BaseXamarin
 {
+    using BaseXamarin.Features;
     using BaseXamarin.Resources;
     using BaseXamarin.Services;
     using System.Globalization;
@@ -22,7 +23,9 @@
             InitLocalization();
             InitializeComponent();
 
-            MainPage = new MainPage();
+            NavigationPage navigationPage = new NavigationPage(new OnboardingView() { ViewModel = new OnboardingViewModel() });
+            NavigationPage.SetHasNavigationBar(navigationPage.CurrentPage, false);
+            MainPage = navigationPage;
         }
 
         protected override void OnStart()

@@ -1,5 +1,6 @@
 ﻿namespace BaseXamarin.iOS
 {
+    using BaseXamarin.Common;
     using Foundation;
     using System;
     using System.Diagnostics;
@@ -28,8 +29,16 @@
             global::Xamarin.Forms.Forms.Init();
 
             LoadApplication(new App());
-            
+
+            SetDeviceDisplayInfo();
+
             return base.FinishedLaunching(app, options);
+        }
+
+        private void SetDeviceDisplayInfo()
+        {
+            DeviceDisplayInfo.ScreenHeight = (int)UIScreen.MainScreen.Bounds.Height;
+            DeviceDisplayInfo.ScreenWidth = (int)UIScreen.MainScreen.Bounds.Width;
         }
 
         private static void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs unobservedTaskExceptionEventArgs)
