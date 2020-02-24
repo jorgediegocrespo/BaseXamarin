@@ -1,4 +1,7 @@
-﻿namespace BaseXamarin.Services
+﻿#if !MOCK
+[assembly: Xamarin.Forms.Dependency(typeof(BaseXamarin.Services.ApiService))]
+#endif
+namespace BaseXamarin.Services
 {
     using Polly;
     using Polly.Fallback;
