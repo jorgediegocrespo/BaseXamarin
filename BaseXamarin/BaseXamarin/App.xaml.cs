@@ -30,7 +30,7 @@
             logService.Start();
             cacheService.Start();
 
-#if DEBUG
+#if DEBUG || MOCK
             exceptionHandlersService.ShowExceptionFile();
 #endif
         }

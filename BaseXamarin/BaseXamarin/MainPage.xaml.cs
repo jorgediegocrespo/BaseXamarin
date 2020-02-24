@@ -17,8 +17,8 @@ namespace BaseXamarin
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            AlertDialogService a = null;
-            await a.ShowDialogAsync("Prueba");
+            IAlertDialogService alertDialogService = DependencyService.Get<IAlertDialogService>();
+            await alertDialogService.ShowDialogAsync("Prueba", "Esto es una prueba", "Cerrar");
         }
     }
 }

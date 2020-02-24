@@ -7,13 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseXamarin.Android", "Base
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseXamarin.iOS", "BaseXamarin\BaseXamarin.iOS\BaseXamarin.iOS.csproj", "{83680022-D3A2-4C80-8EBE-398804A09814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseXamarin", "BaseXamarin\BaseXamarin\BaseXamarin.csproj", "{BF2CE118-19E7-470A-839E-7839CBCC5982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseXamarin", "BaseXamarin\BaseXamarin\BaseXamarin.csproj", "{BF2CE118-19E7-470A-839E-7839CBCC5982}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|iPhone = Debug|iPhone
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Mock|Any CPU = Mock|Any CPU
+		Mock|iPhone = Mock|iPhone
+		Mock|iPhoneSimulator = Mock|iPhoneSimulator
 		Release|Any CPU = Release|Any CPU
 		Release|iPhone = Release|iPhone
 		Release|iPhoneSimulator = Release|iPhoneSimulator
@@ -28,6 +31,14 @@ Global
 		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Mock|Any CPU.ActiveCfg = Mock|Any CPU
+		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Mock|Any CPU.Build.0 = Mock|Any CPU
+		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Mock|iPhone.ActiveCfg = Mock|Any CPU
+		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Mock|iPhone.Build.0 = Mock|Any CPU
+		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Mock|iPhone.Deploy.0 = Mock|Any CPU
+		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Mock|iPhoneSimulator.ActiveCfg = Mock|Any CPU
+		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Mock|iPhoneSimulator.Build.0 = Mock|Any CPU
+		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Mock|iPhoneSimulator.Deploy.0 = Mock|Any CPU
 		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A8A314B-BED2-4929-BDBE-DAF92D26655A}.Release|Any CPU.Deploy.0 = Release|Any CPU
@@ -46,6 +57,12 @@ Global
 		{83680022-D3A2-4C80-8EBE-398804A09814}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{83680022-D3A2-4C80-8EBE-398804A09814}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{83680022-D3A2-4C80-8EBE-398804A09814}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
+		{83680022-D3A2-4C80-8EBE-398804A09814}.Mock|Any CPU.ActiveCfg = Mock|iPhoneSimulator
+		{83680022-D3A2-4C80-8EBE-398804A09814}.Mock|Any CPU.Build.0 = Mock|iPhoneSimulator
+		{83680022-D3A2-4C80-8EBE-398804A09814}.Mock|iPhone.ActiveCfg = Mock|iPhone
+		{83680022-D3A2-4C80-8EBE-398804A09814}.Mock|iPhone.Build.0 = Mock|iPhone
+		{83680022-D3A2-4C80-8EBE-398804A09814}.Mock|iPhoneSimulator.ActiveCfg = Mock|iPhoneSimulator
+		{83680022-D3A2-4C80-8EBE-398804A09814}.Mock|iPhoneSimulator.Build.0 = Mock|iPhoneSimulator
 		{83680022-D3A2-4C80-8EBE-398804A09814}.Release|Any CPU.ActiveCfg = Release|iPhone
 		{83680022-D3A2-4C80-8EBE-398804A09814}.Release|Any CPU.Build.0 = Release|iPhone
 		{83680022-D3A2-4C80-8EBE-398804A09814}.Release|Any CPU.Deploy.0 = Release|iPhone
@@ -64,6 +81,12 @@ Global
 		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Mock|Any CPU.ActiveCfg = Mock|Any CPU
+		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Mock|Any CPU.Build.0 = Mock|Any CPU
+		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Mock|iPhone.ActiveCfg = Mock|Any CPU
+		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Mock|iPhone.Build.0 = Mock|Any CPU
+		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Mock|iPhoneSimulator.ActiveCfg = Mock|Any CPU
+		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Mock|iPhoneSimulator.Build.0 = Mock|Any CPU
 		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BF2CE118-19E7-470A-839E-7839CBCC5982}.Release|Any CPU.Deploy.0 = Release|Any CPU
