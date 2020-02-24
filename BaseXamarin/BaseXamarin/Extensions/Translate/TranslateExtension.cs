@@ -21,7 +21,7 @@
         public TranslateExtension()
         {
             if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
-                ci = AppResources.Culture; //DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
+                ci = AppResources.Culture; 
         }
 
         public object ProvideValue(IServiceProvider serviceProvider)
@@ -32,7 +32,7 @@
             var translation = ResMgr.Value.GetString(Text, ci);
             if (translation == null)
             {
-#if DEBUG
+#if DEBUG || MOCK
                 throw new ArgumentException(string.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name), "Text");
 #else
                 translation = Text; // HACK: returns the key, which GETS DISPLAYED TO THE USER

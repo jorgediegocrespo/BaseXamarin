@@ -6,5 +6,6 @@
                       x:Class="BaseXamarin.Features.OnboardingView"
                       x:TypeArguments="features:OnboardingViewModel">
     <StackLayout>
+        
     </StackLayout>
 </base:BaseContentPage>

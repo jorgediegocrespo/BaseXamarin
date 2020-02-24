@@ -13,13 +13,11 @@
     {
         protected readonly IKeyboardService keyboardService;
         protected readonly ILogService logService;
-        protected readonly IStatusBarService statusBarService;
 
         public BaseContentPage()
         {
             keyboardService = DependencyService.Get<IKeyboardService>();
             logService = DependencyService.Get<ILogService>();
-            statusBarService = DependencyService.Get<IStatusBarService>();
 
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
