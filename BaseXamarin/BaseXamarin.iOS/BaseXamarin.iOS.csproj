@@ -65,6 +65,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\PageRenderer\PageRenderer.cs" />
+    <Compile Include="Services\ExceptionHandlersService\ExceptionHandlersService.cs" />
     <Compile Include="Services\KeyboardService\KeyboardService.cs" />
     <Compile Include="Services\LocalizeService\LocalizeService.cs" />
     <None Include="Entitlements.plist" />

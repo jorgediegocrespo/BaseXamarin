@@ -4,6 +4,9 @@
     using Android.Content.PM;
     using Android.OS;
     using Android.Runtime;
+    using System;
+    using System.IO;
+    using System.Threading.Tasks;
 
     [Activity(Label = "BaseXamarin", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -17,15 +20,50 @@
 
             base.OnCreate(savedInstanceState);
 
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
+            TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
             LoadApplication(new App());
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        private static void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs unobservedTaskExceptionEventArgs)
+        {
+            Exception newExc = new Exception("TaskSchedulerOnUnobservedTaskException", unobservedTaskExceptionEventArgs.Exception);
+            LogUnhandledException(newExc);
+        }
+
+        private static void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs unhandledExceptionEventArgs)
+        {
+            Exception newExc = new Exception("CurrentDomainOnUnhandledException", unhandledExceptionEventArgs.ExceptionObject as Exception);
+            LogUnhandledException(newExc);
+        }
+
+        private static void LogUnhandledException(Exception exception)
+        {
+            try
+            {
+                const string errorFileName = "Fatal.log";
+                string libraryPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+                string errorFilePath = Path.Combine(libraryPath, errorFileName);
+                var errorMessage = string.Format("Time: {0}\r\nError: Unhandled Exception\r\n{1}",
+                DateTime.Now, exception.ToString());
+                File.WriteAllText(errorFilePath, errorMessage);
+
+                System.Diagnostics.Debug.WriteLine("Crash Report", errorMessage);
+            }
+            catch
+            {
+                // just suppress any error logging exceptions
+            }
         }
     }
 }

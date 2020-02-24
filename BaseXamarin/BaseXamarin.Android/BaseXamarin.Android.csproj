@@ -67,6 +67,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ExceptionHandlersService\ExceptionHandlersService.cs" />
     <Compile Include="Services\KeyboardService\KeyboardListner.cs" />
     <Compile Include="Services\KeyboardService\KeyboardService.cs" />
     <Compile Include="Services\KeyboardService\KeyboardServiceExtensions.cs" />

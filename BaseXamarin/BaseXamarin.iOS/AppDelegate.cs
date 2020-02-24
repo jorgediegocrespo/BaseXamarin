@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
-using UIKit;
-
-namespace BaseXamarin.iOS
+﻿namespace BaseXamarin.iOS
 {
+    using Foundation;
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Threading.Tasks;
+    using UIKit;
+
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
@@ -22,10 +22,46 @@ namespace BaseXamarin.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
+            TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
 
+            global::Xamarin.Forms.Forms.Init();
+
+            LoadApplication(new App());
+            
             return base.FinishedLaunching(app, options);
         }
+
+        private static void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs unobservedTaskExceptionEventArgs)
+        {
+            Exception newExc = new Exception("TaskSchedulerOnUnobservedTaskException", unobservedTaskExceptionEventArgs.Exception);
+            LogUnhandledException(newExc);
+        }
+
+        private static void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs unhandledExceptionEventArgs)
+        {
+            Exception newExc = new Exception("CurrentDomainOnUnhandledException", unhandledExceptionEventArgs.ExceptionObject as Exception);
+            LogUnhandledException(newExc);
+        }
+
+        private static void LogUnhandledException(Exception exception)
+        {
+            try
+            {
+                const string errorFileName = "Fatal.log";
+                var libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Resources);
+                var errorFilePath = Path.Combine(libraryPath, errorFileName);
+                var errorMessage = String.Format("Time: {0}\r\nError: Unhandled Exception\r\n{1}",
+                DateTime.Now, exception.ToString());
+                File.WriteAllText(errorFilePath, errorMessage);
+
+                Debug.WriteLine("Crash Report", errorMessage);
+            }
+            catch
+            {
+                // just suppress any error logging exceptions
+            }
+        }
+
     }
 }

@@ -10,12 +10,14 @@
         private readonly ICacheService cacheService;
         private readonly ILogService logService;
         private readonly ILocalizeService localizeService;
+        private readonly IExceptionHandlersService exceptionHandlersService;
 
         public App()
         {
             cacheService = DependencyService.Get<ICacheService>();
             logService = DependencyService.Get<ILogService>();
             localizeService = DependencyService.Get<ILocalizeService>();
+            exceptionHandlersService = DependencyService.Get<IExceptionHandlersService>();
 
             InitLocalization();
             InitializeComponent();
@@ -27,6 +29,10 @@
         {
             logService.Start();
             cacheService.Start();
+
+#if DEBUG
+            exceptionHandlersService.ShowExceptionFile();
+#endif
         }
 
         protected override void OnSleep()

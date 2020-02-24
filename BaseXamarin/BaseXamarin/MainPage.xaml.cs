@@ -1,5 +1,4 @@
-﻿using BaseXamarin.Resources;
-using BaseXamarin.Services;
+﻿using BaseXamarin.Services;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -16,8 +15,10 @@ namespace BaseXamarin
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
+            AlertDialogService a = null;
+            await a.ShowDialogAsync("Prueba");
         }
     }
 }
