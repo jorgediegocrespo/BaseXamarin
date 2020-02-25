@@ -1,10 +1,8 @@
 ﻿namespace BaseXamarin.Base
 {
-    using BaseXamarin.Common;
     using BaseXamarin.Services;
     using ReactiveUI;
     using ReactiveUI.XamForms;
-    using System;
     using System.Reactive.Disposables;
     using Xamarin.Forms;
     using Xamarin.Forms.PlatformConfiguration.iOSSpecific;

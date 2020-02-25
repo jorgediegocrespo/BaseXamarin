@@ -4,7 +4,7 @@
     using System.Reactive.Disposables;
     using Xamarin.Forms;
 
-    public class BaseContentView 
+    public class BaseContentView : ContentView
     {
         protected readonly ILogService logService;
         protected CompositeDisposable disposables;
