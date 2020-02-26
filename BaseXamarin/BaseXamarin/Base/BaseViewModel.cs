@@ -38,7 +38,7 @@
             return Task.CompletedTask;
         }
 
-        private void CreateCommands()
+        protected virtual void CreateCommands()
         { }
     }
 }

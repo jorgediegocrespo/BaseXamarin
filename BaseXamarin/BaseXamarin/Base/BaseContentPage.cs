@@ -19,14 +19,18 @@
 
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
-            this.WhenActivated(d => CreateBindings(d));
+            this.WhenActivated(d => DefineBindings(d));
         }
 
-        protected virtual CompositeDisposable CreateBindings(CompositeDisposable disposables)
+        protected CompositeDisposable DefineBindings(CompositeDisposable disposables)
         {
             logService.Log($"Creating bindings {GetType().ToString()}");
+            CreateBindings(disposables);
             return disposables;
         }
+
+        protected virtual void CreateBindings(CompositeDisposable disposables)
+        { }
 
         protected override void OnAppearing()
         {
